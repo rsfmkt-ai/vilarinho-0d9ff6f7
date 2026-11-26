@@ -1,10 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Header } from "@/components/site/Header";
+import { Header, Logo } from "@/components/site/Header";
 import { Hero } from "@/components/site/Hero";
 import { PracticeCarousel } from "@/components/site/PracticeCarousel";
 import { useReveal } from "@/components/site/use-reveal";
 import { contact, nav, posts, practices, team } from "@/lib/site-data";
-import hero from "@/assets/hero-sao-paulo.jpg";
+import hero from "@/assets/slide-contratos.jpg";
 
 const TITLE = "Vilarinho Advogados | Advocacia Empresarial em São Paulo";
 const DESC =
@@ -162,7 +162,7 @@ function Index() {
 
       <footer className="bg-navy-deep text-navy-foreground">
         <div className="mx-auto flex max-w-7xl flex-col gap-8 px-5 py-12 md:flex-row md:items-center md:justify-between md:px-10">
-          <p className="text-lg font-semibold tracking-[0.12em]">VILARINHO</p>
+          <Logo />
           <nav aria-label="Rodapé">
             <ul className="flex flex-wrap gap-x-6 gap-y-3 text-sm text-navy-foreground/80">
               {nav.map((n) => (

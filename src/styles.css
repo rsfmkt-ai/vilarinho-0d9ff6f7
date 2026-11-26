@@ -6,6 +6,7 @@
 
 @theme inline {
   --font-sans: "Hanken Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Cormorant Garamond", ui-serif, Georgia, serif;
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -111,4 +112,14 @@
 
 @utility hero-overlay {
   background: linear-gradient(100deg, color-mix(in oklab, var(--navy-deep) 92%, transparent) 0%, color-mix(in oklab, var(--navy-deep) 55%, transparent) 55%, transparent 100%);
+}
+
+@utility hero-wash-light {
+  background: linear-gradient(100deg, color-mix(in oklab, var(--background) 92%, transparent) 0%, color-mix(in oklab, var(--background) 60%, transparent) 50%, transparent 100%);
+}
+@utility hero-wash-grey {
+  background: linear-gradient(100deg, color-mix(in oklab, var(--secondary) 95%, transparent) 0%, color-mix(in oklab, var(--secondary) 55%, transparent) 55%, transparent 100%);
+}
+@utility hero-wash-navy {
+  background: linear-gradient(100deg, color-mix(in oklab, var(--navy) 88%, transparent) 0%, color-mix(in oklab, var(--navy) 45%, transparent) 50%, transparent 85%);
 }
