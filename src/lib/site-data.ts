@@ -54,6 +54,7 @@ export const nav = [
   { id: "escritorio", label: "Escritório" },
   { id: "atuacao", label: "Atuação" },
   { id: "equipe", label: "Equipe" },
+  { id: "cases", label: "Cases" },
   { id: "conteudo", label: "Conteúdo" },
   { id: "contato", label: "Contato" },
 ] as const;

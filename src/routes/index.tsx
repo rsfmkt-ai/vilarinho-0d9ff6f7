@@ -4,6 +4,9 @@ import { Hero } from "@/components/site/Hero";
 import { PracticeCarousel } from "@/components/site/PracticeCarousel";
 import { useReveal } from "@/components/site/use-reveal";
 import { contact, nav, posts, practices, team } from "@/lib/site-data";
+import { SuccessCases } from "@/components/site/SuccessCases";
+const photos = import.meta.glob("../assets/team/*.webp", { eager: true, import: "default" }) as Record<string, string>;
+const photo = (i: number) => photos[`../assets/team/p${i}.webp`];
 import hero from "@/assets/slide-contratos.jpg";
 
 const TITLE = "Vilarinho Advogados | Advocacia Empresarial em São Paulo";
@@ -105,9 +108,9 @@ function Index() {
             <SectionTitle id="equipe-titulo" eyebrow="Pessoas" title="Equipe" dark />
             <ul className="mt-12 grid grid-cols-2 gap-px bg-navy-foreground/10 sm:grid-cols-3 lg:grid-cols-3">
               {team.map((t, i) => (
-                <li key={t.name} className="reveal group bg-navy p-6 transition-colors duration-500 hover:bg-navy-deep md:p-8" style={{ transitionDelay: `${(i % 3) * 80}ms` }}>
-                  <div aria-hidden className="grid h-14 w-14 place-items-center rounded-full border border-navy-foreground/30 text-sm tracking-widest transition-colors group-hover:border-highlight group-hover:text-highlight">
-                    {initials(t.name)}
+                <li key={t.name} className="reveal group flex flex-col items-center bg-navy p-6 text-center transition-colors duration-500 hover:bg-navy-deep md:p-8" style={{ transitionDelay: `${(i % 3) * 80}ms` }}>
+                  <div className="grid h-24 w-24 place-items-center overflow-hidden rounded-full border-2 border-navy-foreground/30 text-sm tracking-widest transition-colors group-hover:border-highlight md:h-28 md:w-28">
+                    {photo(i) ? <img src={photo(i)} alt={`Foto de ${t.name}`} width={256} height={256} loading="lazy" decoding="async" className="h-full w-full object-cover" /> : <span aria-hidden>{initials(t.name)}</span>}
                   </div>
                   <h3 className="mt-6 text-lg font-normal leading-tight md:text-xl">{t.name}</h3>
                   <p className="mt-1 text-sm text-navy-foreground/60">{t.role}</p>
@@ -116,6 +119,8 @@ function Index() {
             </ul>
           </div>
         </section>
+
+        <SuccessCases />
 
         <section id="conteudo" aria-labelledby="conteudo-titulo" className="scroll-mt-16 py-20 md:py-28">
           <div className="mx-auto max-w-7xl px-5 md:px-10">
