@@ -23,7 +23,7 @@ export function Hero() {
   useEffect(() => {
     window.dispatchEvent(new CustomEvent("hero-tone", { detail: slideTone(i) }));
   }, [i]);
-  const p = practices[i]!;
+  const p = practices[i] ?? practices[0];
   const light = slideTone(i) === "light";
 
   return (
@@ -47,7 +47,7 @@ export function Hero() {
           className={cn("absolute inset-0 -z-20 h-full w-full object-cover transition-opacity duration-1000", idx === i ? "opacity-100" : "opacity-0")}
         />
       ))}
-      <div className={cn("absolute inset-0 -z-10 transition-opacity duration-700", light ? "hero-wash-navy" : "hero-wash-light")} />
+      <div className={cn("absolute inset-0 -z-10 transition-opacity duration-700", light ? "hero-wash-charcoal" : "hero-wash-light")} />
       <div className="mx-auto w-full max-w-7xl px-5 pb-16 pt-32 md:px-10 md:pb-24">
         <p className={cn("mb-5 text-xs font-medium uppercase tracking-[0.3em]", light ? "text-navy-foreground/80" : "text-highlight")}>Advocacia empresarial · São Paulo</p>
         <h1 className="sr-only">Vilarinho Advogados — escritório de advocacia empresarial em São Paulo</h1>

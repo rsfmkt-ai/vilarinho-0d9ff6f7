@@ -35,6 +35,10 @@
   --color-navy-foreground: var(--navy-foreground);
   --color-highlight: var(--highlight);
   --color-line: var(--line);
+  --color-profile-surface: var(--profile-surface);
+  --color-profile-foreground: var(--profile-foreground);
+  --color-profile-muted: var(--profile-muted);
+  --color-modal-backdrop: var(--modal-backdrop);
 }
 
 :root {
@@ -63,6 +67,11 @@
   --navy-foreground: oklch(0.99 0 0);
   --highlight: oklch(0.62 0.12 250);
   --line: oklch(0.82 0.01 260);
+  --hero-charcoal: oklch(0.34 0 0);
+  --profile-surface: oklch(1 0 0);
+  --profile-foreground: oklch(0.25 0 0);
+  --profile-muted: oklch(0.48 0 0);
+  --modal-backdrop: oklch(0.18 0 0);
 }
 
 @layer base {
@@ -122,4 +131,15 @@
 }
 @utility hero-wash-navy {
   background: linear-gradient(100deg, color-mix(in oklab, var(--navy) 88%, transparent) 0%, color-mix(in oklab, var(--navy) 45%, transparent) 50%, transparent 85%);
+}
+
+@utility hero-wash-charcoal {
+  background: linear-gradient(100deg, color-mix(in oklab, var(--hero-charcoal) 94%, transparent) 0%, color-mix(in oklab, var(--hero-charcoal) 72%, transparent) 48%, transparent 90%);
+}
+
+@utility profile-photo-wash {
+  background: linear-gradient(to top, var(--profile-surface), transparent 55%);
+  @media (min-width: 768px) {
+    background: linear-gradient(to right, transparent 35%, var(--profile-surface));
+  }
 }

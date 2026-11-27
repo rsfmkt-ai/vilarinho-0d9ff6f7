@@ -1,0 +1,3 @@
+- [ ] Trocar o degradê azul dos dois slides indicados por cinza.
+- [ ] Criar boxes da equipe com fotos, bios e contatos fictícios autorizados pelo usuário.
+- [ ] Verificar no computador e celular.
